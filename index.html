@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050608" />
+    <title>Velocity Field</title>
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <main class="stage">
+      <canvas id="field" aria-label="Animated abstract field of horizontal light"></canvas>
+
+      <section class="control-deck" aria-label="Generator controls">
+        <div class="deck-lead">
+          <p class="eyebrow">Modal Runtime Lightfield Generator</p>
+          <p class="seed-readout">Seed <span id="seedValue">000000</span></p>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span>Intensity <output id="intensityOut">76</output></span>
+            <input id="intensity" aria-label="Intensity" type="range" min="30" max="100" value="76" />
+          </label>
+
+          <label class="control">
+            <span>Density <output id="densityOut">56</output></span>
+            <input id="density" aria-label="Density" type="range" min="20" max="100" value="56" />
+          </label>
+
+          <label class="control">
+            <span>Color range <output id="colorRangeOut">72</output></span>
+            <input id="colorRange" aria-label="Color range" type="range" min="0" max="100" value="72" />
+          </label>
+
+          <label class="control">
+            <span>Speed <output id="speedOut">68</output></span>
+            <input id="speed" aria-label="Speed" type="range" min="0" max="100" value="68" />
+          </label>
+
+          <label class="control">
+            <span>Flicker <output id="flickerOut">18</output></span>
+            <input id="flicker" aria-label="Flicker" type="range" min="0" max="100" value="18" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="pauseBtn" class="icon-btn" type="button" aria-label="Pause animation" title="Pause animation">
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6v12M16 6v12" /></svg>
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z" /></svg>
+          </button>
+          <button id="saveBtn" class="text-btn" type="button" title="Save still">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M8 11l4 4 4-4M5 19h14" /></svg>
+            <span class="label">Save still</span>
+          </button>
+          <button id="recordBtn" class="text-btn record-btn" type="button" title="Record from ignition">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" /></svg>
+            <span class="label">Record</span>
+          </button>
+          <button id="exportSvgBtn" class="text-btn" type="button" title="Export SVG">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="17.5" r="1.6" /><circle cx="17.5" cy="6.5" r="1.6" /><path d="M8 16 16 8" /></svg>
+            <span class="label">Export SVG</span>
+          </button>
+          <button id="seedBtn" class="primary-btn" type="button">
+            New field
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" /></svg>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js?v=3"></script>
+  </body>
+</html>
